@@ -1,4 +1,3 @@
-// Public exports for bun-meditor
 export * from "./src/mediator";
 export * from "./src/types";
 export * from "./src/behaviors";

@@ -1,11 +1,53 @@
 {
   "name": "bun-meditor",
   "description": "Lightweight mediator for Bun: send/publish with DI, behaviors, cancellation, and decorators.",
-  "module": "index.ts",
+  "keywords": ["mediator","bun","typescript","ioc","di","cancellation","decorators","patterns"],
+  "version": "0.1.1",
+  "homepage": "https://github.com/can-acar/bun-mediator",
   "type": "module",
-  "private": true,
+  "private": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "bun": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./mediator": {
+      "bun": "./dist/src/mediator.js",
+      "import": "./dist/src/mediator.js",
+      "types": "./dist/src/mediator.d.ts"
+    },
+    "./types": {
+      "bun": "./dist/src/types.js",
+      "import": "./dist/src/types.js",
+      "types": "./dist/src/types.d.ts"
+    },
+    "./behaviors": {
+      "bun": "./dist/src/behaviors.js",
+      "import": "./dist/src/behaviors.js",
+      "types": "./dist/src/behaviors.d.ts"
+    },
+    "./decorators": {
+      "bun": "./dist/src/decorators.js",
+      "import": "./dist/src/decorators.js",
+      "types": "./dist/src/decorators.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "DESCRIPTION.md"
+  ],
   "scripts": {
     "test": "bun test",
+    "clean": "rm -rf dist",
+    "build": "bun run clean && bun build ./index.ts ./src/mediator.ts ./src/types.ts ./src/behaviors.ts ./src/decorators.ts --outdir ./dist --target bun && tsc -p tsconfig.types.json",
+    "prepare": "bun run build",
     "example:basic": "bun run examples/basic.ts",
     "example:behaviors": "bun run examples/behaviors.ts",
     "example:decorators": "bun run examples/decorators.ts",
@@ -13,7 +55,8 @@
     "example:serve-decorators": "bun run examples/serve-decorators.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -22,5 +65,8 @@
     "bun-cancellation-token": "^0.1.0",
     "bun-ioc": "^0.1.0",
     "reflect-metadata": "^0.1.13"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
   }
 }

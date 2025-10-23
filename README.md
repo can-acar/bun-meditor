@@ -137,3 +137,8 @@ bun run examples/decorators.ts
 bun run examples/serve.ts
 bun run examples/serve-decorators.ts
 ```
+
+## Lisans
+
+MIT © 2025 Can Acar
+
