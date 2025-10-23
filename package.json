@@ -1,5 +1,6 @@
 {
   "name": "bun-meditor",
+  "description": "Lightweight mediator for Bun: send/publish with DI, behaviors, cancellation, and decorators.",
   "module": "index.ts",
   "type": "module",
   "private": true,
