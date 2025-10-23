@@ -1,0 +1,25 @@
+{
+  "name": "bun-meditor",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "bun test",
+    "example:basic": "bun run examples/basic.ts",
+    "example:behaviors": "bun run examples/behaviors.ts",
+    "example:decorators": "bun run examples/decorators.ts",
+    "example:serve": "bun run examples/serve.ts",
+    "example:serve-decorators": "bun run examples/serve-decorators.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "bun-cancellation-token": "^0.1.0",
+    "bun-ioc": "^0.1.0",
+    "reflect-metadata": "^0.1.13"
+  }
+}
